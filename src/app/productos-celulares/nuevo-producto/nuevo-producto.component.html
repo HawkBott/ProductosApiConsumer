@@ -1,0 +1,220 @@
+<div class="container my-5">
+  <form>
+    <!-- Tarjeta Principal para Información del Producto -->
+    <div class="card">
+      <div class="card-header">Información del Producto</div>
+      <div class="card-body">
+        <!-- Clave y Nombre -->
+        <div class="mb-3">
+          <label for="claveProducto" class="form-label">Clave</label>
+          <input type="text" class="form-control" id="claveProducto" placeholder="Ingrese la clave del producto">
+        </div>
+        <div class="mb-3">
+          <label for="nombreProducto" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombreProducto" placeholder="Ingrese el nombre del producto">
+        </div>
+
+        <!-- Subtarjeta para Dimensiones -->
+        <div class="card">
+          <div class="card-header">Dimensiones</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-3">
+                <label for="altoProducto">Alto (cm)</label>
+                <input type="range" id="altoProducto" [(ngModel)]="alto" min="12" max="20" step="0.1">
+                <span>{{ alto }}</span> cm
+              </div>
+              <div class="col-md-3">
+                <label for="anchoProducto">Ancho (cm)</label>
+                <input type="range" id="anchoProducto" [(ngModel)]="ancho" min="6" max="10" step="0.1">
+                <span>{{ ancho }}</span> cm
+              </div>
+              <div class="col-md-3">
+                <label for="grosorProducto">Grosor (mm)</label>
+                <input type="range" id="grosorProducto" [(ngModel)]="grosor" min="6" max="12" step="0.1">
+                <span>{{ grosor }}</span> mm
+              </div>
+              <div class="col-md-3">
+                <label for="pesoProducto">Peso (g)</label>
+                <input type="range" id="pesoProducto" [(ngModel)]="peso" min="100" max="300" step="1">
+                <span>{{ peso }}</span> g
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      
+        
+        
+        <!-- Modelo, Costo, Precio, Cantidad Existente, Status -->
+        <div class="mb-3">
+          <label for="modeloProducto" class="form-label">Modelo</label>
+          <input type="text" class="form-control" id="modeloProducto" placeholder="Modelo del producto">
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <label for="costoProducto" class="form-label">Costo</label>
+            <input type="number" class="form-control" id="costoProducto" placeholder="Costo">
+          </div>
+          
+          <div class="col-md-4">
+            <label for="cantidadExistenteProducto" class="form-label">Cantidad Existente</label>
+            <input type="number" class="form-control" id="cantidadExistenteProducto" placeholder="Cantidad Existente">
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="statusProducto" class="form-label">Status</label>
+          <select class="form-select" id="statusProducto">
+            <option value="vigente">Vigente</option>
+            <option value="descontinuado">Descontinuado</option>
+          </select>
+        </div>
+
+        <!-- Subtarjeta para Especificaciones Técnicas -->
+        <div class="card">
+          <div class="card-header">Especificaciones Técnicas</div>
+          <div class="card-body">
+            <div class="mb-3">
+              <label for="sistemaOperativoProducto" class="form-label">Sistema Operativo</label>
+              <input type="text" class="form-control" id="sistemaOperativoProducto" placeholder="Sistema Operativo">
+            </div>
+            <div class="mb-3">
+              <label for="resolucionPantallaProducto" class="form-label">Resolución de Pantalla</label>
+              <input type="number" class="form-control" id="resolucionPantallaProducto" placeholder="Resolución de Pantalla">
+            </div>
+            <div class="mb-3">
+              <label for="tipoBateriaProducto" class="form-label">Tipo de Batería</label>
+              <input type="text" class="form-control" id="tipoBateriaProducto" placeholder="Tipo de Batería">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="memoriaInternaProducto" class="form-label">Memoria Interna</label>
+                <input type="text" class="form-control" id="memoriaInternaProducto" placeholder="Memoria Interna">
+              </div>
+              <div class="col-md-6">
+                <label for="memoriaRAMProducto" class="form-label">Memoria RAM</label>
+                <input type="text" class="form-control" id="memoriaRAMProducto" placeholder="Memoria RAM">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="CPUProducto" class="form-label">CPU</label>
+              <input type="text" class="form-control" id="CPUProducto" placeholder="CPU">
+            </div>
+            <div class="mb-3">
+              <label for="camaraProducto" class="form-label">Cámara</label>
+              <input type="text" class="form-control" id="camaraProducto" placeholder="Cámara">
+            </div>
+          </div>
+        </div>
+        <!-- Conexiones -->
+        <div class="mb-3">
+          <label class="form-label">Conexiones</label>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="wifi" id="wifi">
+            <label class="form-check-label" for="wifi">WiFi</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="bluetooth" id="bluetooth">
+            <label class="form-check-label" for="bluetooth">Bluetooth</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="usb" id="usb">
+            <label class="form-check-label" for="usb">USB</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="gps" id="gps">
+            <label class="form-check-label" for="gps">GPS</label>
+          </div>
+        </div>
+        <!-- Fecha de Adquisición, Origen, Foto -->
+        <div class="mb-3">
+          <label for="fechaAdquisicionProducto" class="form-label">Fecha de Adquisición</label>
+          <input type="date" class="form-control" id="fechaAdquisicionProducto">
+        </div>
+        <div class="mb-3">
+          <label for="origenProducto" class="form-label">Origen</label>
+          <select class="form-control" id="origenProducto">
+            <option value="">Seleccione un país</option>
+            <option value="Estados Unidos">Estados Unidos</option>
+            <option value="China">China</option>
+            <option value="Alemania">Alemania</option>
+            <option value="India">India</option>
+            <option value="Japón">Japón</option>
+            <option value="México">México</option>
+            <option value="Reino Unido">Reino Unido</option>
+            <option value="Francia">Francia</option>
+            <option value="Italia">Italia</option>
+            <option value="Brasil">Brasil</option>
+            <!-- Agrega más países según sea necesario -->
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="fotoProducto" class="form-label">Foto</label>
+          <input type="file" class="form-control" id="fotoProducto" accept="image/*">
+        </div>
+        
+        
+
+        <!-- Subtarjeta para Descuento -->
+        <div class="card">
+          <div class="card-header">Descuento</div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="porcentajeDescuentoProducto" class="form-label">Porcentaje</label>
+                <input type="number" class="form-control" id="porcentajeDescuentoProducto" placeholder="Porcentaje de Descuento">
+              </div>
+              <div class="col-md-6">
+                <label for="temporadaDescuentoProducto" class="form-label">Temporada</label>
+                <select class="form-control" id="temporadaDescuentoProducto">
+                  <option value="">Seleccione una Temporada</option>
+                  <option value="primavera">Primavera</option>
+                  <option value="verano">Verano</option>
+                  <option value="otoño">Otoño</option>
+                  <option value="invierno">Invierno</option>
+                  <option value="navidad">Navidad</option>
+                  <option value="blackfriday">Black Friday</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Proveedor ID, Marca ID -->
+        <div class="mb-3">
+          <label for="proveedorIdProducto" class="form-label">Proveedor ID</label>
+          <select class="form-control" id="proveedorIdProducto">
+            <option value="">Seleccione un proveedor</option>
+            <option value="1">Proveedor 1</option> <!-- Ejemplo de opción estática -->
+            <option value="2">Proveedor 2</option> <!-- Ejemplo de opción estática -->
+            <!-- Otras opciones de proveedores vendrán aquí -->
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="marcaIdProducto" class="form-label">Marca ID</label>
+          <select class="form-control" id="marcaIdProducto">
+            <option value="">Seleccione una marca</option>
+            <option value="1">Marca A</option> <!-- Ejemplo de opción estática -->
+            <option value="2">Marca B</option> <!-- Ejemplo de opción estática -->
+            <!-- Otras opciones de marcas vendrán aquí -->
+          </select>
+        </div>
+        
+
+
+      </div>
+
+
+
+
+
+
+
+
+    </div>
+    <!-- Botón de Envío -->
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,19 @@
+
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card .card {
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: white;
+}
+
+.card-body {
+  padding: 20px;
+}

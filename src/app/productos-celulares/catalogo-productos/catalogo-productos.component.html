@@ -1,0 +1,14 @@
+<div *ngIf="listaProductos && listaProductos.length > 0; else noProductos">
+    <ul>
+      <li *ngFor="let producto of listaProductos">
+        <h2>{{ producto.nombre }} ({{ producto.clave }})</h2>
+        <p>Modelo: {{ producto.modelo }}</p>
+        <p>Precio: {{ producto.precio }}</p> <!-- Ajustado para no usar el pipe currency -->
+        <p>Status: {{ producto.status }}</p>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noProductos>
+    <p>No hay productos disponibles.</p>
+  </ng-template>
+  

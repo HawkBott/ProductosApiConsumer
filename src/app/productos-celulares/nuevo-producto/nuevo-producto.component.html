@@ -16,32 +16,25 @@
 
         <!-- Subtarjeta para Dimensiones -->
         <div class="card">
-          <div class="card-header">Dimensiones</div>
+          <div class="card-header">Dimensiones Simplificadas</div>
           <div class="card-body">
             <div class="row">
               <div class="col-md-3">
-                <label for="altoProducto">Alto (cm)</label>
-                <input type="range" id="altoProducto" [(ngModel)]="alto" min="12" max="20" step="0.1">
-                <span>{{ alto }}</span> cm
+                <input type="number" id="altoProducto" placeholder="Alto del producto" >
               </div>
               <div class="col-md-3">
-                <label for="anchoProducto">Ancho (cm)</label>
-                <input type="range" id="anchoProducto" [(ngModel)]="ancho" min="6" max="10" step="0.1">
-                <span>{{ ancho }}</span> cm
+                <input type="number" id="anchoProducto" placeholder="Ancho del producto" >
               </div>
               <div class="col-md-3">
-                <label for="grosorProducto">Grosor (mm)</label>
-                <input type="range" id="grosorProducto" [(ngModel)]="grosor" min="6" max="12" step="0.1">
-                <span>{{ grosor }}</span> mm
+                <input type="number" id="grosorProducto"  placeholder="Grosor del producto">
               </div>
               <div class="col-md-3">
-                <label for="pesoProducto">Peso (g)</label>
-                <input type="range" id="pesoProducto" [(ngModel)]="peso" min="100" max="300" step="1">
-                <span>{{ peso }}</span> g
+                <input type="number" id="pesoProducto" placeholder="Peso del producto">
               </div>
             </div>
           </div>
         </div>
+
         
       
         
@@ -192,12 +185,12 @@
         </div>
         <div class="mb-3">
           <label for="marcaIdProducto" class="form-label">Marca ID</label>
-          <select class="form-control" id="marcaIdProducto">
-            <option value="">Seleccione una marca</option>
-            <option value="1">Marca A</option> <!-- Ejemplo de opción estática -->
-            <option value="2">Marca B</option> <!-- Ejemplo de opción estática -->
-            <!-- Otras opciones de marcas vendrán aquí -->
-          </select>
+          <select #idMarca class="form-control" (change)="get_id_marca(idMarca.value)">
+            <option value="">Selecciona una Marca</option>
+            <option *ngFor="let marca of listaMarcas" [value]="marca.marcaID">
+              {{ marca.nombre_marca }}
+            </option>
+          </select>          
         </div>
         
 

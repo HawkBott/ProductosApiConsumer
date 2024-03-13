@@ -32,7 +32,7 @@ export interface Producto {
     costo: number;
     precio: number;
     cantidadExistente: number;
-    status: 'vigente' | 'descontinuado'; // Uso de union type para restringir los valores
+    status: string; // Uso de union type para restringir los valores
     especificacionesTecnicas: EspecificacionesTecnicas;
     conexiones: string[];
     fechaAdquisicion: Date | string; // Se puede usar Date o string dependiendo de cómo se manejen las fechas

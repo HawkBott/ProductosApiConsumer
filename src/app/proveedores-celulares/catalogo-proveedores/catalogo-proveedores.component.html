@@ -1,0 +1,58 @@
+<div *ngIf="listaProveedores && listaProveedores.length > 0; else noProductos" class="container mt-4">
+    <div class="table-responsive custom-table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Sitio Web</th>
+            <th>RFC</th>
+            <th>Telefono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let proveedor of listaProveedores">
+                     
+            <td>{{ proveedor.nombre }}</td>
+            <td>{{ proveedor.sitio_web }}</td>
+            <td>{{ proveedor.RFC }}</td>
+            <td>{{ proveedor.telefono }}</td>
+            <td>
+              <div class="action-buttons">
+                <a class="action-button delete">
+                  <i class="fa fa-trash" aria-hidden="true"></i> 
+                </a>
+                <a class="action-button edit" >
+                  <i class="fa fa-pencil" aria-hidden="true"></i> 
+                </a>
+                
+              </div>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <ng-template #noProductos>
+    <div class="alert alert-warning" role="alert">
+      No hay proveedores disponibles.
+    </div>
+  </ng-template>
+  
+  
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+  
+  

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //importar servicios y modelo
 import { Producto } from 'src/app/modelos/productos.modelos';
-
-import { ServiciosProductoService } from 'src/app/servicios_producto/servicios-producto.service';
+import { ServiciosProductoService } from 'src/app/all_services/servicios_producto/servicios-producto.service';
 
 @Component({
   selector: 'app-catalogo-productos',

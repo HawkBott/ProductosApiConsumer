@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpClientModule } from '@angular/common/http'; // Paso 1: Importar HttpClientModule
-import { Producto } from '../modelos/productos.modelos';
+
+
+import { Marca } from 'src/app/modelos/marcas.modelos';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServiciosProductoService {
+export class MarcaService {
 
   constructor(private http:HttpClient) { }
 
-  productos_get_all(){
-    return this.http.get<Producto[]>('http://127.0.0.1:4000/productos/get_all')
+  get_marcas(){
+    return this.http.get<Marca[]>('http://127.0.0.1:4000/marcas/get_all')
   }
 
 }

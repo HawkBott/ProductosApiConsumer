@@ -1,14 +1,62 @@
-<div *ngIf="listaProductos && listaProductos.length > 0; else noProductos">
-    <ul>
-      <li *ngFor="let producto of listaProductos">
-        <h2>{{ producto.nombre }} ({{ producto.clave }})</h2>
-        <p>Modelo: {{ producto.modelo }}</p>
-        <p>Precio: {{ producto.precio }}</p> <!-- Ajustado para no usar el pipe currency -->
-        <p>Status: {{ producto.status }}</p>
-      </li>
-    </ul>
+<div *ngIf="listaProductos && listaProductos.length > 0; else noProductos" class="container mt-4">
+  <div class="table-responsive custom-table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Modelo</th>
+          <th>Precio</th>
+          <th>Status</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of listaProductos">
+          <td>
+            <div class="text-center">
+              <img [src]="producto.foto" class="product-img" alt="Producto">
+            </div>
+          </td>          
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.modelo }}</td>
+          <td>${{ producto.precio }}</td>
+          <td>{{ producto.status }}</td>
+          <td>
+            <div class="action-buttons">
+              <a class="action-button delete" [routerLink]="['/eliminar_producto', producto._id]">
+                <i class="fa fa-trash" aria-hidden="true"></i> 
+              </a>
+              <a class="action-button edit" [routerLink]="['/actualizar_producto', producto._id]">
+                <i class="fa fa-pencil" aria-hidden="true"></i> 
+              </a>
+              
+            </div>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <ng-template #noProductos>
-    <p>No hay productos disponibles.</p>
-  </ng-template>
-  
+</div>
+
+<ng-template #noProductos>
+  <div class="alert alert-warning" role="alert">
+    No hay productos disponibles.
+  </div>
+</ng-template>
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+

@@ -1,5 +1,9 @@
 <div class="container my-5">
   <form>
+
+
+
+
     <!-- Tarjeta Principal para Información del Producto -->
     <div class="card">
       <div class="card-header">Información del Producto</div>
@@ -7,12 +11,16 @@
         <!-- Clave y Nombre -->
         <div class="mb-3">
           <label for="claveProducto" class="form-label">Clave</label>
-          <input type="text" class="form-control" id="claveProducto" placeholder="Ingrese la clave del producto">
+          <input type="text" class="form-control" id="claveProducto" [(ngModel)]="productoVacio.clave" name="claveProducto"  placeholder="Ingrese la clave del producto">
         </div>
         <div class="mb-3">
           <label for="nombreProducto" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombreProducto" placeholder="Ingrese el nombre del producto">
+          <input type="text" class="form-control" id="nombreProducto"  [(ngModel)]="productoVacio.nombre" name="nombreProducto" placeholder="Ingrese el nombre del producto">
         </div>
+
+
+
+
 
         <!-- Subtarjeta para Dimensiones -->
         <div class="card">
@@ -20,16 +28,16 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-3">
-                <input type="number" id="altoProducto" placeholder="Alto del producto" >
+                <input type="number" id="altoProducto"  [(ngModel)]="productoVacio.dimensiones.alto" name="altoProducto" placeholder="Alto del producto" >
               </div>
               <div class="col-md-3">
-                <input type="number" id="anchoProducto" placeholder="Ancho del producto" >
+                <input type="number" id="anchoProducto"  [(ngModel)]="productoVacio.dimensiones.ancho" name="anchoProducto" placeholder="Ancho del producto" >
               </div>
               <div class="col-md-3">
-                <input type="number" id="grosorProducto"  placeholder="Grosor del producto">
+                <input type="number" id="grosorProducto" [(ngModel)]="productoVacio.dimensiones.grosor" name="grosorProducto"  placeholder="Grosor del producto">
               </div>
               <div class="col-md-3">
-                <input type="number" id="pesoProducto" placeholder="Peso del producto">
+                <input type="number" id="pesoProducto" [(ngModel)]="productoVacio.dimensiones.peso" name="pesoProducto"  placeholder="Peso del producto">
               </div>
             </div>
           </div>
@@ -42,22 +50,22 @@
         <!-- Modelo, Costo, Precio, Cantidad Existente, Status -->
         <div class="mb-3">
           <label for="modeloProducto" class="form-label">Modelo</label>
-          <input type="text" class="form-control" id="modeloProducto" placeholder="Modelo del producto">
+          <input type="text" class="form-control" id="modeloProducto" [(ngModel)]="productoVacio.modelo" name="modeloProducto"  placeholder="Modelo del producto">
         </div>
         <div class="row">
           <div class="col-md-4">
             <label for="costoProducto" class="form-label">Costo</label>
-            <input type="number" class="form-control" id="costoProducto" placeholder="Costo">
+            <input type="number" class="form-control" id="costoProducto" [(ngModel)]="productoVacio.costo"  name="costoProducto"  placeholder="Costo">
           </div>
           
           <div class="col-md-4">
             <label for="cantidadExistenteProducto" class="form-label">Cantidad Existente</label>
-            <input type="number" class="form-control" id="cantidadExistenteProducto" placeholder="Cantidad Existente">
+            <input type="number" class="form-control" id="cantidadExistenteProducto"  [(ngModel)]="productoVacio.cantidadExistente" name="cantidadExistenteProducto" placeholder="Cantidad Existente">
           </div>
         </div>
         <div class="mb-3">
           <label for="statusProducto" class="form-label">Status</label>
-          <select class="form-select" id="statusProducto">
+          <select class="form-select" id="statusProducto"  [(ngModel)]="productoVacio.status" name="statusProducto" >
             <option value="vigente">Vigente</option>
             <option value="descontinuado">Descontinuado</option>
           </select>
@@ -69,64 +77,69 @@
           <div class="card-body">
             <div class="mb-3">
               <label for="sistemaOperativoProducto" class="form-label">Sistema Operativo</label>
-              <input type="text" class="form-control" id="sistemaOperativoProducto" placeholder="Sistema Operativo">
+              <input type="text" class="form-control" id="sistemaOperativoProducto"  [(ngModel)]="productoVacio.especificacionesTecnicas.sistemaOperativo" name="sistemaOperativoProducto" placeholder="Sistema Operativo">
             </div>
             <div class="mb-3">
               <label for="resolucionPantallaProducto" class="form-label">Resolución de Pantalla</label>
-              <input type="number" class="form-control" id="resolucionPantallaProducto" placeholder="Resolución de Pantalla">
+              <input type="number" class="form-control" id="resolucionPantallaProducto" [(ngModel)]="productoVacio.especificacionesTecnicas.resolucionPantalla"  name="resolucionPantallaProducto"  placeholder="Resolución de Pantalla">
             </div>
             <div class="mb-3">
               <label for="tipoBateriaProducto" class="form-label">Tipo de Batería</label>
-              <input type="text" class="form-control" id="tipoBateriaProducto" placeholder="Tipo de Batería">
+              <input type="text" class="form-control" id="tipoBateriaProducto"  [(ngModel)]="productoVacio.especificacionesTecnicas.tipoBateria" name="tipoBateriaProducto" placeholder="Tipo de Batería">
             </div>
             <div class="row">
               <div class="col-md-6">
                 <label for="memoriaInternaProducto" class="form-label">Memoria Interna</label>
-                <input type="text" class="form-control" id="memoriaInternaProducto" placeholder="Memoria Interna">
+                <input type="text" class="form-control" id="memoriaInternaProducto"  [(ngModel)]="productoVacio.especificacionesTecnicas.memoriaInterna" name="memoriaInternaProducto" placeholder="Memoria Interna">
               </div>
               <div class="col-md-6">
                 <label for="memoriaRAMProducto" class="form-label">Memoria RAM</label>
-                <input type="text" class="form-control" id="memoriaRAMProducto" placeholder="Memoria RAM">
+                <input type="text" class="form-control" id="memoriaRAMProducto"  [(ngModel)]="productoVacio.especificacionesTecnicas.memoriaRAM" name="memoriaRAMProducto" placeholder="Memoria RAM">
               </div>
             </div>
             <div class="mb-3">
               <label for="CPUProducto" class="form-label">CPU</label>
-              <input type="text" class="form-control" id="CPUProducto" placeholder="CPU">
+              <input type="text" class="form-control" id="CPUProducto"  [(ngModel)]="productoVacio.especificacionesTecnicas.CPU"  name="CPUProducto" placeholder="CPU">
             </div>
             <div class="mb-3">
               <label for="camaraProducto" class="form-label">Cámara</label>
-              <input type="text" class="form-control" id="camaraProducto" placeholder="Cámara">
+              <input type="text" class="form-control" id="camaraProducto" [(ngModel)]="productoVacio.especificacionesTecnicas.camara"  name="camaraProducto"  placeholder="Cámara">
             </div>
           </div>
         </div>
+
+
+
+
         <!-- Conexiones -->
         <div class="mb-3">
           <label class="form-label">Conexiones</label>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="wifi" id="wifi">
+            <input class="form-check-input" type="checkbox" value="wifi" id="wifi" (change)="actualizarConexiones($event)" name="wifi" >
             <label class="form-check-label" for="wifi">WiFi</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="bluetooth" id="bluetooth">
+            <input class="form-check-input" type="checkbox" value="bluetooth" id="bluetooth"  (change)="actualizarConexiones($event)" name="bluetooth">
             <label class="form-check-label" for="bluetooth">Bluetooth</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="usb" id="usb">
+            <input class="form-check-input" type="checkbox" value="usb" id="usb"  (change)="actualizarConexiones($event)" name="usb">
             <label class="form-check-label" for="usb">USB</label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="gps" id="gps">
+            <input class="form-check-input" type="checkbox" value="gps" id="gps"  (change)="actualizarConexiones($event)" name="gps">
             <label class="form-check-label" for="gps">GPS</label>
           </div>
         </div>
+
         <!-- Fecha de Adquisición, Origen, Foto -->
         <div class="mb-3">
           <label for="fechaAdquisicionProducto" class="form-label">Fecha de Adquisición</label>
-          <input type="date" class="form-control" id="fechaAdquisicionProducto">
+          <input type="date" class="form-control" id="fechaAdquisicionProducto" [(ngModel)]="productoVacio.fechaAdquisicion" name="fechaAdquisicionProducto">
         </div>
         <div class="mb-3">
           <label for="origenProducto" class="form-label">Origen</label>
-          <select class="form-control" id="origenProducto">
+          <select class="form-control" id="origenProducto" [(ngModel)]="productoVacio.origen" name="origenProducto">
             <option value="">Seleccione un país</option>
             <option value="Estados Unidos">Estados Unidos</option>
             <option value="China">China</option>
@@ -143,8 +156,9 @@
         </div>
         <div class="mb-3">
           <label for="fotoProducto" class="form-label">Foto</label>
-          <input type="file" class="form-control" id="fotoProducto" accept="image/*">
+          <input type="file" class="form-control" id="fotoProducto" accept="image/*" (change)="convertir_B64($event)" name="fotoProducto">
         </div>
+
         
         
 
@@ -155,11 +169,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="porcentajeDescuentoProducto" class="form-label">Porcentaje</label>
-                <input type="number" class="form-control" id="porcentajeDescuentoProducto" placeholder="Porcentaje de Descuento">
+                <input type="number" class="form-control" id="porcentajeDescuentoProducto"  [(ngModel)]="productoVacio.descuento.porcentaje" name="porcentajeDescuentoProducto"  placeholder="Porcentaje de Descuento" >
               </div>
               <div class="col-md-6">
                 <label for="temporadaDescuentoProducto" class="form-label">Temporada</label>
-                <select class="form-control" id="temporadaDescuentoProducto">
+                <select class="form-control" id="temporadaDescuentoProducto" [(ngModel)]="productoVacio.descuento.temporada" name="temporadaDescuentoProducto" >
                   <option value="">Seleccione una Temporada</option>
                   <option value="primavera">Primavera</option>
                   <option value="verano">Verano</option>
@@ -176,7 +190,7 @@
         <!-- Proveedor ID, Marca ID -->
         <div class="mb-3">
           <label for="proveedorIdProducto" class="form-label">Proveedor ID</label>
-          <select class="form-control" id="proveedorIdProducto">
+          <select class="form-control" id="proveedorIdProducto"  [(ngModel)]="productoVacio.proveedorId" name="proveedorIdProducto">
             <option value="">Seleccione un proveedor</option>
             <option value="1">Proveedor 1</option> <!-- Ejemplo de opción estática -->
             <option value="2">Proveedor 2</option> <!-- Ejemplo de opción estática -->
@@ -185,8 +199,7 @@
         </div>
         <div class="mb-3">
           <label for="marcaIdProducto" class="form-label">Marca ID</label>
-          <select #idMarca class="form-control" (change)="get_id_marca(idMarca.value)">
-            <option value="">Selecciona una Marca</option>
+          <select #idMarca class="form-control" (change)="get_id_marca(idMarca.value)" [(ngModel)]="productoVacio.marcaId" placeholder="Ingresa el nombre de la marca" >
             <option *ngFor="let marca of listaMarcas" [value]="marca.marcaID">
               {{ marca.nombre_marca }}
             </option>
@@ -198,16 +211,21 @@
       </div>
 
 
-
-
-
-
-
-
     </div>
+
+
+
+
+
+
     <!-- Botón de Envío -->
     <div class="text-center">
-      <button type="submit" class="btn btn-primary">Enviar</button>
+      <button type="button" class="btn btn-primary" (click)="enviarProd()">Enviar</button>
     </div>
+
+
+
+
+
   </form>
 </div>

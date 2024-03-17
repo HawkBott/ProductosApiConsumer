@@ -25,6 +25,9 @@ export interface Descuento {
   
   // Definición de la interfaz principal del Producto
 export interface Producto {
+    _id:{
+      $oid:string,
+    };
     clave: string;
     nombre: string;
     dimensiones: Dimensiones;

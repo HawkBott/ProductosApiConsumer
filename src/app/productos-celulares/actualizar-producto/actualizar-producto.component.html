@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h2>Actualizar Datos del Producto</h2>
+  <form (ngSubmit)="actualizarProducto()" #form="ngForm">
+    <div class="mb-3">
+      <label for="costo" class="form-label">Costo:</label>
+      <input type="number" class="form-control" id="costo" [(ngModel)]="productoVacio.costo" name="costo" required min="0">
+    </div>
+    <div class="mb-3">
+      <label for="cantidadExistente" class="form-label">Cantidad Existente:</label>
+      <input type="number" class="form-control" id="cantidadExistente" [(ngModel)]="productoVacio.cantidadExistente" name="cantidadExistente" required min="0">
+    </div>
+    <div class="mb-3">
+      <label for="status" class="form-label">Estado:</label>
+      <select class="form-select" id="status" [(ngModel)]="productoVacio.status" name="status" required>
+        <option value="vigente">Vigente</option>
+        <option value="descontinuado">Descontinuado</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="origen" class="form-label">Origen:</label>
+      <input type="text" class="form-control" id="origen" [(ngModel)]="productoVacio.origen" name="origen" required>
+    </div>
+    <div class="mb-3">
+      <label for="clave" class="form-label">Clave:</label>
+      <input type="text" class="form-control" id="clave" [(ngModel)]="productoVacio.clave" name="clave" required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Actualizar Datos</button>
+  </form>
+</div>

@@ -1,8 +1,8 @@
 <div class="container mt-5">
-    <h2 class="mb-5 text-center">Registro de Proveedor</h2>
     <div class="card">
         <div class="card-body">
             <form>
+                <h4 class="mt-4 mb-3">Personal</h4>
                 <div class="form-icon-group">
                     <i class="fas fa-id-badge"></i>
                     <input type="text" class="form-control" id="proveedorId" [(ngModel)]="proveedorVacio.proveedorId" name="proveedorId" placeholder="Ingrese ID del Proveedor">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-icon-group">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" class="form-control mb-2" placeholder="Código Postal" [(ngModel)]="proveedorVacio.direccion.cp" id="cp" name="cp">
+                        <input type="number" class="form-control mb-2" placeholder="Código Postal" [(ngModel)]="proveedorVacio.direccion.cp" id="cp" name="cp">
                     </div>
                     <div class="form-icon-group">
                         <i class="fas fa-road"></i>

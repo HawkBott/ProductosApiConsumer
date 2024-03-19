@@ -1,5 +1,56 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+/* Estilo para las filas expandidas */
+.details-row {
+  background-color: #f8f9fa; /* Un fondo ligeramente diferente para destacar */
+}
+
+.details-row td {
+  padding-top: 1rem; /* Más espacio en la parte superior para separar del contenido anterior */
+  padding-bottom: 1rem; /* Más espacio en la parte inferior para separar del contenido siguiente */
+  border-top: 2px solid #dee2e6; /* Una línea más destacada en la parte superior */
+}
+
+.product-details {
+  font-size: 0.9rem; /* Un tamaño de fuente ligeramente menor para los detalles, para diferenciar del contenido principal */
+  color: #495057; /* Un color de texto un poco más oscuro para mejorar la legibilidad */
+}
+
+.product-details p {
+  margin-bottom: 0.5rem; /* Reduce el margen entre párrafos para un aspecto más compacto */
+}
+
+/* Estilo para mejorar la visibilidad de las filas al expandirse */
+tr.expanded {
+  background-color: #e9ecef; /* Cambia el fondo de la fila expandible para destacarla */
+}
+
+tr.expanded td {
+  border-bottom: 2px solid #dee2e6; /* Resalta la línea inferior de la fila expandida */
+}
+
+/* Efecto para el botón que expande/cierra los detalles */
+button.btn-info {
+  background-color: #17a2b8;
+  color: white;
+  border: none; /* Elimina el borde predeterminado */
+}
+
+button.btn-info:hover {
+  background-color: #138496; /* Oscurece el botón al pasar el ratón */
+}
+
+.fa-plus, .fa-minus {
+  transition: transform 0.2s; /* Suaviza la transición al cambiar */
+}
+
+button.btn-info:active .fa-plus,
+button.btn-info:active .fa-minus {
+  transform: scale(0.9); /* Efecto de presión al hacer clic */
+}
+
+
+
 .custom-table-responsive {
     border-radius: 12px;
     overflow: hidden;

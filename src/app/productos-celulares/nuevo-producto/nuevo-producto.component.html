@@ -28,20 +28,26 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-3">
-                <input type="number" id="altoProducto"  [(ngModel)]="productoVacio.dimensiones.alto" name="altoProducto" placeholder="Alto del producto" >
+                <label for="altoProducto">Alto del producto (mm)</label>
+                <input type="number" id="altoProducto" [(ngModel)]="productoVacio.dimensiones.alto" name="altoProducto" placeholder="Ej. 150" >
               </div>
               <div class="col-md-3">
-                <input type="number" id="anchoProducto"  [(ngModel)]="productoVacio.dimensiones.ancho" name="anchoProducto" placeholder="Ancho del producto" >
+                <label for="anchoProducto">Ancho del producto (mm)</label>
+                <input type="number" id="anchoProducto" [(ngModel)]="productoVacio.dimensiones.ancho" name="anchoProducto" placeholder="Ej. 70" >
               </div>
               <div class="col-md-3">
-                <input type="number" id="grosorProducto" [(ngModel)]="productoVacio.dimensiones.grosor" name="grosorProducto"  placeholder="Grosor del producto">
+                <label for="grosorProducto">Grosor del producto (mm)</label>
+                <input type="number" id="grosorProducto" [(ngModel)]="productoVacio.dimensiones.grosor" name="grosorProducto" placeholder="Ej. 8">
               </div>
               <div class="col-md-3">
-                <input type="number" id="pesoProducto" [(ngModel)]="productoVacio.dimensiones.peso" name="pesoProducto"  placeholder="Peso del producto">
+                <label for="pesoProducto">Peso del producto (g)</label>
+                <input type="number" id="pesoProducto" [(ngModel)]="productoVacio.dimensiones.peso" name="pesoProducto" placeholder="Ej. 200">
               </div>
             </div>
           </div>
         </div>
+        
+        
 
         
       

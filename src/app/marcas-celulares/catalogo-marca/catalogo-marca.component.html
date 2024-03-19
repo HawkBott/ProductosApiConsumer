@@ -1,27 +1,32 @@
 <div *ngIf="listaMarcas && listaMarcas.length > 0; else noProductos" class="container mt-4">
-    <div class="table-responsive custom-table-responsive">
-      <table class="table">
-        <thead>
+  <div class="table-responsive custom-table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th> <!-- Espacio para el botón de expandir -->
+          <th>Imagen</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Sitio Web</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let marca of listaMarcas">
           <tr>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>descripcion</th>
-            <th>Sitio Web</th>
-            <th>Productos Asociados</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let marca of listaMarcas">
+            <td>
+              <button (click)="marca.expanded = !marca.expanded" class="btn btn-info btn-sm">
+                <i class="fa" [class.fa-plus]="!marca.expanded" [class.fa-minus]="marca.expanded"></i>
+              </button>
+            </td>
             <td>
               <div class="text-center">
-                <img [src]="marca.logo" class="product-img" alt="Producto">
+                <img [src]="marca.logo" class="product-img" alt="Marca">
               </div>
             </td>          
             <td>{{ marca.nombre_marca }}</td>
             <td>{{ marca.descripcion }}</td>
-            <td>${{ marca.sitio_web }}</td>
-            <td>{{ marca.productosId }}</td>
+            <td>{{ marca.sitio_web }}</td>
             <td>
               <div class="action-buttons">
                 <a class="action-button delete" [routerLink]="['/eliminar_marca', marca._id]">
@@ -30,21 +35,29 @@
                 <a class="action-button edit" [routerLink]="['/actualizar_marca', marca._id]">
                   <i class="fa fa-pencil" aria-hidden="true"></i> 
                 </a>
-                
               </div>
             </td>
-            
           </tr>
-        </tbody>
-      </table>
-    </div>
+          <!-- Fila expandida para mostrar detalles adicionales -->
+          <tr *ngIf="marca.expanded">
+            <td colspan="6">
+              <div>
+                <p><strong>Marca ID:</strong> {{ marca.marcaID }}</p>
+                <p><strong>Productos Asociados:</strong> {{ marca.productosId && marca.productosId.length > 0 ? marca.productosId.join(', ') : 'N/A' }}</p>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
   </div>
-  
-  <ng-template #noProductos>
-    <div class="alert alert-warning" role="alert">
-      No hay proveedores disponibles.
-    </div>
-  </ng-template>
+</div>
+<ng-template #noProductos>
+<div class="alert alert-warning" role="alert">
+  No hay marcas disponibles.
+</div>
+</ng-template>
+
   
   
   

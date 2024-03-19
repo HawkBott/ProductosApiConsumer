@@ -1,87 +1,94 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 .custom-table-responsive {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .custom-table-responsive:hover {
-    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-  }
-  
-  .table {
-    margin-bottom: 0;
-    background-color: #fff; /* Asegura que el fondo sea blanco para mayor legibilidad */
-    color: #333;
-  }
-  
-  .table th {
-    background-color: #333; /* Color más vibrante para los encabezados */
-    color: #fff;
-    font-weight: bold;
-    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-  }
-  
-  .table th, .table td {
-    border: 1px solid #bdc3c7;
-    padding: 0.75rem;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .table td:hover {
-    background-color: #f2f2f2;
-  }
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
 
-  .product-img {
-    max-width: 100px;
-    border-radius: 50%; /* Hace que las imágenes sean circulares */
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .product-img:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
-  }
+.custom-table-responsive:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
 
-  .action-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Espacio entre botones */
-  }
-  
-  .action-button {
-    padding: 10px 25px;
-    border-radius: 20px; /* Botones más redondeados */
-    background-color: #17a2b8; /* Color de fondo neutro para todos los botones */
-    color: #fff;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: all 0.2s ease-in-out;
-  }
-  
-  
-  
-  .action-button:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-  }
-  
-  .action-button:hover {
-    background-color: #138496; /* Oscurece el botón al pasar el ratón */
-    color: #e2e6ea; /* Cambia el color del texto para mayor contraste */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  
-  .delete {
-    background-color: #dc3545;
-  }
-  
-  .edit {
-    background-color: #ffc107;
-  }
-  
+.table {
+  margin-bottom: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+.table th {
+  background-color: #4a69bd; /* Un tono azul más sofisticado para los encabezados */
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.table td:hover {
+  background-color: #e9ecef; /* Un tono suave al pasar el ratón */
+}
+
+.product-img {
+  width: 50px; /* Tamaño ajustado para una mejor visualización */
+  height: 50px; /* Mantener la proporción */
+  object-fit: cover; /* Asegurar que la imagen cubra el espacio sin deformarse */
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-img:hover {
+  transform: scale(1.05); /* Efecto de zoom sutil */
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #17a2b8;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-button:active {
+  transform: translateY(2px);
+}
+
+.action-button:hover {
+  background-color: #138496;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.delete {
+  background-color: #e74c3c; /* Un rojo más intenso */
+}
+
+.edit {
+  background-color: #f1c40f; /* Un amarillo más brillante */
+}
+
+/* Estilos específicos para las filas expandidas */
+.details-row td {
+  background-color: #f8f9fa; /* Fondo diferenciado para destacar los detalles */
+  font-size: 0.9em; /* Un tamaño de letra ligeramente menor para los detalles */
+}
+
+.details-row {
+  border-top: 2px solid #dee2e6; /* Una línea visual para separar los detalles */
+}

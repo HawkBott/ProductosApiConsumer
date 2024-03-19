@@ -1,5 +1,59 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+
+/* Estilo para las filas al ser expandidas */
+.details-row {
+  background-color: #f7f7f7; /* Un fondo suave para los detalles */
+}
+
+.details-row td {
+  padding: 1rem; /* Más espacio para los detalles */
+  border-top: 2px solid #ccc; /* Una delimitación clara */
+}
+
+.product-details {
+  animation: slideDown 0.3s ease forwards; /* Efecto suave al mostrar detalles */
+  color: #606f7b; /* Color de texto optimizado para detalles */
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Botón de expansión con un toque moderno */
+button.btn-info {
+  background-color: #778ca3; /* Color de fondo */
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px; /* Bordes redondeados para un aspecto moderno */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-info:hover {
+  background-color: #4b6584; /* Color al pasar el ratón */
+}
+
+/* Íconos de acción con efecto de hover */
+.fa-plus, .fa-minus {
+  transition: transform 0.2s ease;
+}
+
+button.btn-info:hover .fa-plus,
+button.btn-info:hover .fa-minus {
+  transform: scale(1.2); /* Agrandar ícono al pasar el ratón */
+}
+
+
 .custom-table-responsive {
     border-radius: 12px;
     overflow: hidden;

@@ -1,18 +1,24 @@
-<div *ngIf="listaProveedores && listaProveedores.length > 0; else noProductos" class="container mt-4">
-    <div class="table-responsive custom-table-responsive">
-      <table class="table">
-        <thead>
+<div *ngIf="listaProveedores && listaProveedores.length > 0; else noProveedores" class="container mt-4">
+  <div class="table-responsive custom-table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th> <!-- Espacio para el botón de expandir -->
+          <th>Nombre</th>
+          <th>Sitio Web</th>
+          <th>RFC</th>
+          <th>Telefono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let proveedor of listaProveedores">
           <tr>
-            <th>Nombre</th>
-            <th>Sitio Web</th>
-            <th>RFC</th>
-            <th>Telefono</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let proveedor of listaProveedores">
-                     
+            <td>
+              <button (click)="proveedor.expanded = !proveedor.expanded" class="btn btn-info btn-sm">
+                <i class="fa" [class.fa-plus]="!proveedor.expanded" [class.fa-minus]="proveedor.expanded"></i>
+              </button>
+            </td>
             <td>{{ proveedor.nombre }}</td>
             <td>{{ proveedor.sitio_web }}</td>
             <td>{{ proveedor.RFC }}</td>
@@ -20,26 +26,42 @@
             <td>
               <div class="action-buttons">
                 <a class="action-button delete" [routerLink]="['/eliminar_proveedor', proveedor._id]">
-                  <i class="fa fa-trash" aria-hidden="true" ></i> 
+                  <i class="fa fa-trash" aria-hidden="true"></i> 
                 </a>
-                <a class="action-button edit" [routerLink]="['/actualizar_proveedor', proveedor._id]" >
+                <a class="action-button edit" [routerLink]="['/actualizar_proveedor', proveedor._id]">
                   <i class="fa fa-pencil" aria-hidden="true"></i> 
                 </a>
-                
               </div>
             </td>
-            
           </tr>
-        </tbody>
-      </table>
-    </div>
+          <!-- Fila de detalles -->
+          <tr *ngIf="proveedor.expanded" class="details-row">
+            <td colspan="6">
+              <div class="provider-details">
+                <p><strong>Calle:</strong> {{ proveedor.direccion.calle }}</p>
+                <p><strong>Número Exterior:</strong> {{ proveedor.direccion.numero_exterior }}</p>
+                <p><strong>Número Interior:</strong> {{ proveedor.direccion.numero_interior ? 'Int. ' + proveedor.direccion.numero_interior : '' }}</p>
+                <p><strong>Colonia:</strong> {{ proveedor.direccion.colonia }}</p>
+                <p><strong>Municipio:</strong> {{ proveedor.direccion.municipio }}</p>
+                <p><strong>Estado:</strong> {{ proveedor.direccion.estado }}</p>
+                <p><strong>País:</strong> {{ proveedor.direccion.pais }}</p>
+                <p><strong>CP:</strong> {{ proveedor.direccion.cp }}</p>
+
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
   </div>
-  
-  <ng-template #noProductos>
-    <div class="alert alert-warning" role="alert">
-      No hay proveedores disponibles.
-    </div>
-  </ng-template>
+</div>
+
+<ng-template #noProveedores>
+  <div class="alert alert-warning" role="alert">
+    No hay proveedores disponibles.
+  </div>
+</ng-template>
+
   
   
   

@@ -3,6 +3,7 @@
     <table class="table">
       <thead>
         <tr>
+          <th></th> <!-- Espacio para el botón de expandir -->
           <th>Imagen</th>
           <th>Nombre</th>
           <th>Modelo</th>
@@ -12,37 +13,62 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let producto of listaProductos">
-          <td>
-            <div class="text-center">
-              <img [src]="producto.foto" class="product-img" alt="Producto">
-            </div>
-          </td>          
-          <td>{{ producto.nombre }}</td>
-          <td>{{ producto.modelo }}</td>
-          <td>${{ producto.precio }}</td>
-          <td>{{ producto.status }}</td>
-          <td>
-            <div class="action-buttons">
-              <a class="action-button delete" [routerLink]="['/eliminar_producto', producto._id]">
-                <i class="fa fa-trash" aria-hidden="true"></i> 
-              </a>
-              <a class="action-button edit" [routerLink]="['/actualizar_producto', producto._id]">
-                <i class="fa fa-pencil" aria-hidden="true"></i> 
-              </a>
-              
-            </div>
-          </td>
-          
-        </tr>
+        <ng-container *ngFor="let producto of listaProductos">
+          <tr [class.expanded]="producto.expanded">
+            <td>
+              <button (click)="producto.expanded = !producto.expanded" class="btn btn-info btn-sm">
+                <i class="fa" [class.fa-plus]="!producto.expanded" [class.fa-minus]="producto.expanded"></i>
+              </button>
+            </td>
+            <td>
+              <div class="text-center">
+                <img [src]="producto.foto" class="product-img" alt="Producto">
+              </div>
+            </td>
+            <td>{{ producto.clave }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>${{ producto.modelo }}</td>
+            <td>{{ producto.status }}</td>
+            <td>
+              <div class="action-buttons">
+                <a class="action-button delete" [routerLink]="['/eliminar_producto', producto._id]">
+                  <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+                <a class="action-button edit" [routerLink]="['/actualizar_producto', producto._id]">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila de detalles, ahora correctamente dentro del ámbito de *ngFor -->
+          <tr *ngIf="producto.expanded" class="details-row">
+            <td colspan="7">
+              <div class="product-details">
+                <!-- Detalles del producto aquí -->
+                <p><strong>Fecha de Adquisición:</strong> {{ producto.costo }}</p>
+                <p><strong>Fecha de Adquisición:</strong> {{ producto.cantidadExistente }}</p>
+                <p><strong>Dimensiones:</strong> Alto: {{ producto.dimensiones.alto }} cm, Ancho: {{ producto.dimensiones.ancho }} cm, Grosor: {{ producto.dimensiones.grosor }} cm, Peso: {{ producto.dimensiones.peso }} kg</p>
+                <p><strong>Especificaciones Técnicas:</strong> SO: {{ producto.especificacionesTecnicas.sistemaOperativo }}, Resolución de Pantalla: {{ producto.especificacionesTecnicas.resolucionPantalla }}, Tipo de Batería: {{ producto.especificacionesTecnicas.tipoBateria }}, Memoria Interna: {{ producto.especificacionesTecnicas.memoriaInterna }}, CPU: {{ producto.especificacionesTecnicas.CPU }}, Cámara: {{ producto.especificacionesTecnicas.camara }}, Memoria RAM: {{ producto.especificacionesTecnicas.memoriaRAM }}</p>
+                <p><strong>Conexiones:</strong> {{ producto.conexiones ? producto.conexiones.join(', ') : 'N/A' }}</p>
+                <p><strong>Origen:</strong> {{ producto.origen }}</p>
+                <p><strong>Fecha de Adquisición:</strong> {{ producto.fechaAdquisicion }}</p>
+                <p><strong>Descuento:</strong> {{ producto.descuento.porcentaje }}% durante {{ producto.descuento.temporada }}</p>
+                <p><strong>Fecha de Adquisición:</strong> {{ producto.proveedorId }}</p>
+                <p><strong>Fecha de Adquisición:</strong> {{ producto.marcaId }}</p>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
   </div>
 </div>
 
+
+
 <ng-template #noProductos>
   <div class="alert alert-warning" role="alert">
-    No hay productos disponibles.
+    No hay Productos disponibles.
   </div>
 </ng-template>
 
@@ -58,5 +84,4 @@
 <br>
 <br>
 <br>
-
 

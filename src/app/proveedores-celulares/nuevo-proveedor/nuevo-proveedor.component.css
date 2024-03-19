@@ -1,0 +1,78 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    padding: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+
+.form-icon-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-icon-group i {
+    position: absolute;
+    left: 10px; /* Ajusta este valor si necesitas más espacio entre el borde izquierdo y el icono */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #007bff;
+    z-index: 10;
+}
+
+.form-control {
+    padding-left: 40px; /* Ajusta este valor para aumentar o disminuir el espacio entre el icono y el texto */
+    border-radius: 20px;
+    border: 1px solid #ced4da;
+    position: relative;
+}
+
+
+/* Resto del CSS previamente proporcionado */
+
+
+
+.btn-submit {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+h2, h4 {
+    color: #007bff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+

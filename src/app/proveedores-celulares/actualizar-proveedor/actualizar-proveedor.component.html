@@ -1,1 +1,38 @@
-<p>actualizar-proveedor works!</p>
+<div class="container mt-4">
+    <h2>Actualizar Datos del Proveedor</h2>
+    <form (ngSubmit)="actualizarProveedor()" #form="ngForm">
+      <div class="mb-3">
+        <label for="proveedorId" class="form-label">Proveedor Id:</label>
+        <input type="text" class="form-control" id="proveedorId" [(ngModel)]="proveedorVacio.proveedorId" name="proveedorId" required>
+      </div>
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" [(ngModel)]="proveedorVacio.nombre" name="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="RFC" class="form-label">RFC:</label>
+        <input type="text" class="form-control" id="RFC" [(ngModel)]="proveedorVacio.RFC" name="RFC" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Telefono:</label>
+        <input type="text" class="form-control" id="telefono" [(ngModel)]="proveedorVacio.telefono" name="telefono" required>
+      </div>
+      <div class="mb-3">
+        <label for="sitio_web" class="form-label">Sitio Web:</label>
+        <input type="text" class="form-control" id="sitio_web" [(ngModel)]="proveedorVacio.sitio_web" name="sitio_web" required>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Actualizar Datos</button>
+    </form>
+  </div>
+  
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>

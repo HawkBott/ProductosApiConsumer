@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Registro de Marca</h2>
+    <form id="marcaForm">
+        <div class="form-group floating-form-group">
+            <input type="text" class="form-control" id="marcaID" name="marcaID" [(ngModel)]="marcaVacia.marcaID" placeholder="Marca ID">
+            <label for="marcaID">Marca ID</label>
+        </div>
+        <div class="form-group floating-form-group">
+            <input type="text" class="form-control" id="nombre_marca" name="nombre_marca" [(ngModel)]="marcaVacia.nombre_marca" placeholder="Nombre de la Marca">
+            <label for="nombre_marca">Nombre de la Marca</label>
+        </div>
+        <div class="form-group floating-form-group">
+            <input type="file" class="form-control" id="logo" accept="image/*" (change)="convertir_B64($event)" name="logo">
+            <label for="logo">Logo</label>
+        </div>
+        <div class="form-group floating-form-group">
+            <textarea class="form-control" id="descripcion" name="descripcion" [(ngModel)]="marcaVacia.descripcion"  rows="3" placeholder="Descripción"></textarea>
+            <label for="descripcion">Descripción</label>
+        </div>
+        <div class="form-group floating-form-group">
+            <input type="url" class="form-control" id="sitio_web" name="sitio_web" [(ngModel)]="marcaVacia.sitio_web"  placeholder="Sitio Web">
+            <label for="sitio_web">Sitio Web</label>
+        </div>
+        <div class="form-group floating-form-group">
+            <input type="text" class="form-control" id="productosId" name="productosId" [(ngModel)]="marcaVacia.productosId" placeholder="IDs de Productos">
+            <label for="productosId">IDs de Productos (separados por coma)</label>
+        </div>
+        <button type="button" class="btn btn-primary" (click)="enviarMarca()">Registrar Marca</button>
+    </form>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

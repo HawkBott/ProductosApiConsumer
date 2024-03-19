@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
 import { Router } from '@angular/router';
-import { ServiciosProductoService } from 'src/app/all_services/servicios_producto/servicios-producto.service';
 
+
+import { ServiciosProductoService } from 'src/app/all_services/servicios_producto/servicios-producto.service';
 import { Producto } from 'src/app/modelos/productos.modelos';
+
+
+
 
 @Component({
   selector: 'app-actualizar-producto',
@@ -12,6 +15,8 @@ import { Producto } from 'src/app/modelos/productos.modelos';
   styleUrls: ['./actualizar-producto.component.css']
 })
 export class ActualizarProductoComponent implements OnInit {
+
+  
   prodId: string | null = null;
 
   productoVacio: Producto = {

@@ -1,0 +1,57 @@
+body {
+    background: #f5f5f5;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.floating-form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.floating-form-group input, .floating-form-group textarea {
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.floating-form-group label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: white;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #777;
+    transition: all 0.3s ease;
+}
+
+.floating-form-group input:focus, .floating-form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.floating-form-group input:focus + label, .floating-form-group textarea:focus + label {
+    color: #007bff;
+    font-size: 10px;
+    transform: translateY(-15px);
+}
+
+.floating-form-group input:not(:placeholder-shown) + label, .floating-form-group textarea:not(:placeholder-shown) + label {
+    font-size: 10px;
+    color: #777;
+    transform: translateY(-15px);
+}
+
+.btn-primary {
+    border-radius: 20px;
+    padding: 10px 24px;
+    background: #007bff;
+    border: none;
+}

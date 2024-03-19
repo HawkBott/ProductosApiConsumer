@@ -19,10 +19,10 @@
             <td>{{ proveedor.telefono }}</td>
             <td>
               <div class="action-buttons">
-                <a class="action-button delete">
-                  <i class="fa fa-trash" aria-hidden="true"></i> 
+                <a class="action-button delete" [routerLink]="['/eliminar_proveedor', proveedor._id]">
+                  <i class="fa fa-trash" aria-hidden="true" ></i> 
                 </a>
-                <a class="action-button edit" >
+                <a class="action-button edit" [routerLink]="['/actualizar_proveedor', proveedor._id]" >
                   <i class="fa fa-pencil" aria-hidden="true"></i> 
                 </a>
                 

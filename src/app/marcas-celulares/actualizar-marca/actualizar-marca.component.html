@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form (ngSubmit)="actualizarMarca()" #form="ngForm">
+                <div class="form-group card-input">
+                    <label for="marcaID">ID de Marca</label>
+                    <input type="text" class="form-control" id="marcaID" name="marcaID" [(ngModel)]="marcaVacia.marcaID" placeholder="Ingrese el ID de la marca">
+                </div>
+                
+                <div class="form-group card-input">
+                    <label for="nombre_marca">Nombre de la Marca</label>
+                    <input type="text" class="form-control" id="nombre_marca" name="nombre_marca" [(ngModel)]="marcaVacia.nombre_marca" placeholder="Ingrese el nombre de la marca">
+                </div>
+
+                <div class="form-group card-input">
+                    <label for="descripcion">Descripción</label>
+                    <textarea class="form-control" id="descripcion" name="descripcion" [(ngModel)]="marcaVacia.descripcion"  rows="3" placeholder="Ingrese una descripción de la marca"></textarea>
+                </div>
+
+                <div class="form-group card-input">
+                    <label for="sitio_web">Sitio Web</label>
+                    <input type="url" class="form-control" id="sitio_web" name="sitio_web" [(ngModel)]="marcaVacia.sitio_web" placeholder="Ingrese el URL del sitio web">
+                </div>
+
+                <div class="form-group card-input">
+                    <label for="productosId">ID de Productos</label>
+                    <input type="text" class="form-control" id="productosId" name="productosId" [(ngModel)]="marcaVacia.marcaID" placeholder="Ingrese los ID de los productos separados por comas">
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Actualizar Datos</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

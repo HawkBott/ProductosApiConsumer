@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-// Importaciones necesarias
+import { Router } from '@angular/router';
+
+
+// Todo lo relaciona a MARCAS
 import { MarcaService } from 'src/app/all_services/servicios_marca/marca.service';
 import { Marca } from 'src/app/modelos/marcas.modelos';
-//importacion para el objeto
+
+//Todo lo relaciona a PRODUCTOS
 import { Producto } from 'src/app/modelos/productos.modelos';
 import { ServiciosProductoService } from 'src/app/all_services/servicios_producto/servicios-producto.service';
-import { Router } from '@angular/router';
+
+//Todo lo relacionado a PROVEEDORES
+import { Proveedor } from 'src/app/modelos/proveedores.modelos';
+import { ServiciosProveedoresService } from 'src/app/all_services/servicios_proveedores/servicios-proveedores.service';
 
 
 @Component({
@@ -16,10 +23,14 @@ import { Router } from '@angular/router';
 export class NuevoProductoComponent implements OnInit {
 
   listaMarcas: Marca[] = [];
+  listaProveedor: Proveedor[] = [];
 
   imagen1: string | ArrayBuffer | null = null; 
 
-  constructor(private servicioMarca: MarcaService, private servicioProducto:ServiciosProductoService, private router: Router) { }
+  constructor(private servicioMarca: MarcaService, 
+    private servicioProducto:ServiciosProductoService, 
+    private router: Router,
+    private servicioProveedor:ServiciosProveedoresService) { }
 
   productoVacio: Producto = {
     _id: {
@@ -57,15 +68,39 @@ export class NuevoProductoComponent implements OnInit {
     },
     proveedorId: "", // String
     marcaId: "", // String
-};
+  };
 
   marcaVacia: Marca = {
+    _id: {
+      $oid: "", // String
+    },
     marcaID: '',
     nombre_marca: '',
     logo: '',
     descripcion: '',
     sitio_web: '',
-    productosId: [] // Un array vacío, indicando que no hay productos asociados inicialmente
+    productosId: []
+  };
+
+  proveedorVacio: Proveedor = {
+    _id: {
+      $oid: "", // String
+    },
+    proveedorId: "",
+    nombre: "",
+    sitio_web: "",
+    RFC: "", 
+    telefono: "",
+    direccion: {
+        pais: "",
+        estado: "",
+        municipio: "",
+        cp: "",
+        calle: "",
+        numero_interior: "",
+        numero_exterior: "", 
+        colonia: ""
+    }
   };
 
   calcularPrecioConDescuento() {
@@ -87,7 +122,7 @@ export class NuevoProductoComponent implements OnInit {
     // Asegura que imagen1 sea tratado como un string. Si imagen1 es null, se asigna un string vacío.
     this.productoVacio.foto = this.imagen1 as string || '';
 
-    // El resto de tu código permanece igual
+
     this.productoVacio.costo = Number(this.productoVacio.costo);
     
     console.log(this.productoVacio);
@@ -110,7 +145,14 @@ export class NuevoProductoComponent implements OnInit {
       console.log(data)
       this.listaMarcas=data;
     });
+  
+    this.servicioProveedor.proveedores_get_all()
+    .subscribe(data =>{
+      console.log(data)
+      this.listaProveedor=data;
+    });
   }
+  
   
   
 
@@ -120,6 +162,13 @@ export class NuevoProductoComponent implements OnInit {
     this.productoVacio.marcaId = id; // Asegúrate de que la propiedad se llame marcaId, no marcaID
     console.log(this.productoVacio.marcaId);
   }
+
+  get_id_proveedor(id: any): void{
+    this.productoVacio.proveedorId = id;
+    console.log(this.productoVacio.proveedorId)
+  }
+
+
   
 
   convertir_B64(event: any) {

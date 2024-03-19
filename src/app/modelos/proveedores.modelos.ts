@@ -2,6 +2,7 @@ export interface Proveedor {
     _id:{
       $oid:string,
     };
+    proveedorId:string;
     nombre: string;
     sitio_web: string;
     RFC: string;

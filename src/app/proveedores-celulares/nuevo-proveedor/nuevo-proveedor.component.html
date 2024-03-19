@@ -1,1 +1,77 @@
-<p>nuevo-proveedor works!</p>
+<div class="container mt-5">
+    <h2 class="mb-5 text-center">Registro de Proveedor</h2>
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-icon-group">
+                    <i class="fas fa-id-badge"></i>
+                    <input type="text" class="form-control" id="proveedorId" [(ngModel)]="proveedorVacio.proveedorId" name="proveedorId" placeholder="Ingrese ID del Proveedor">
+                </div>
+                <div class="form-icon-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="proveedorVacio.nombre" placeholder="Nombre del Proveedor">
+                </div>
+                <div class="form-icon-group">
+                    <i class="fas fa-globe"></i>
+                    <input type="url" class="form-control" id="sitioWeb" name="sitioWeb" [(ngModel)]="proveedorVacio.sitio_web" placeholder="http://ejemplo.com">
+                </div>
+                <div class="form-icon-group">
+                    <i class="fas fa-address-card"></i>
+                    <input type="text" class="form-control" id="RFC" name="RFC" [(ngModel)]="proveedorVacio.RFC" placeholder="RFC">
+                </div>
+                <div class="form-icon-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" class="form-control" id="telefono" name="telefono" [(ngModel)]="proveedorVacio.telefono" placeholder="Teléfono de contacto">
+                </div>
+                <h4 class="mt-4 mb-3">Dirección</h4>
+                <div class="address-fields">
+                    <div class="form-icon-group">
+                        <i class="fas fa-globe-americas"></i>
+                        <input type="text" class="form-control mb-2" placeholder="País" [(ngModel)]="proveedorVacio.direccion.pais" id="pais" name="pais">
+                    </div>
+                    <div class="form-icon-group">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <input type="text" class="form-control mb-2" placeholder="Estado" [(ngModel)]="proveedorVacio.direccion.estado" id="estado" name="estado">
+                    </div>
+                    <div class="form-icon-group">
+                        <i class="fas fa-city"></i>
+                        <input type="text" class="form-control mb-2" placeholder="Municipio" [(ngModel)]="proveedorVacio.direccion.municipio" id="municipio" name="municipio">
+                    </div>
+                    <div class="form-icon-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" class="form-control mb-2" placeholder="Código Postal" [(ngModel)]="proveedorVacio.direccion.cp" id="cp" name="cp">
+                    </div>
+                    <div class="form-icon-group">
+                        <i class="fas fa-road"></i>
+                        <input type="text" class="form-control mb-2" placeholder="Calle" id="calle" [(ngModel)]="proveedorVacio.direccion.calle" name="calle">
+                    </div>
+                    <div class="form-icon-group">
+                        <i class="fas fa-home"></i>
+                        <input type="text" class="form-control mb-2" placeholder="Número Interior" [(ngModel)]="proveedorVacio.direccion.numero_interior" id="numeroInterior" name="numeroInterior">
+                    </div>
+                    <div class="form-icon-group">
+                        <i class="fas fa-building"></i>
+                        <input type="text" class="form-control mb-2" placeholder="Número Exterior" [(ngModel)]="proveedorVacio.direccion.numero_exterior" id="numeroExterior" name="numeroExterior">
+                    </div>
+                    <div class="form-icon-group">
+                        <i class="fas fa-map-signs"></i>
+                        <input type="text" class="form-control mb-2" placeholder="Colonia" [(ngModel)]="proveedorVacio.direccion.colonia" id="colonia" name="colonia">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-submit mt-4" (click)="enviarProveedor()" >Registrar Proveedor</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -190,11 +190,10 @@
         <!-- Proveedor ID, Marca ID -->
         <div class="mb-3">
           <label for="proveedorIdProducto" class="form-label">Proveedor ID</label>
-          <select class="form-control" id="proveedorIdProducto"  [(ngModel)]="productoVacio.proveedorId" name="proveedorIdProducto">
-            <option value="">Seleccione un proveedor</option>
-            <option value="1">Proveedor 1</option> <!-- Ejemplo de opción estática -->
-            <option value="2">Proveedor 2</option> <!-- Ejemplo de opción estática -->
-            <!-- Otras opciones de proveedores vendrán aquí -->
+          <select #idProveedor class="form-control"  (change)="get_id_proveedor(idProveedor.value)" [(ngModel)]="productoVacio.proveedorId" placeholder="Ingresa el proveedor" >
+            <option *ngFor="let proveedor of listaProveedor" [value]="proveedor.proveedorId">
+              {{ proveedor.nombre }}
+            </option>
           </select>
         </div>
         <div class="mb-3">
